@@ -24,7 +24,7 @@ def emotion_detector_endpoint():
 
     # Error Handling when dominant_emotion is None
     if output["dominant_emotion"] is None:
-        return "<b>Invalid text! Please try again!</b>" 
+        return "<b>Invalid text! Please try again!</b>"
 
     # Format the output
     formatted_output = (
