@@ -21,6 +21,12 @@ def emotion_detector_endpoint():
 
     # Call the application function from the package and format the output
     output = emotion_detector(text_to_analyze)
+
+    # Error Handling when dominant_emotion is None
+    if output["dominant_emotion"] is None:
+        return "<b>Invalid text! Please try again!</b>" 
+
+    # Format the output
     formatted_output = (
         "For the given statement, the system response is "
         f"'anger': {output['anger']}, 'disgust': {output['disgust']}, 'fear': {output['fear']}, "
